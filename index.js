@@ -2,7 +2,6 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 require("dotenv").config();
 const { Poru } = require('poru');
 const {Spotify} = require("poru-spotify");
-const keepAlive = require(`./server`);
 
 let spotify = new Spotify({
   clientID:"b5ae1640dd414917b0a99c13c5f6a309",
@@ -36,5 +35,5 @@ client.slashCommands = new Collection();
 ['commands', 'events', 'slash', 'poruEvent'].forEach((handler) => {
   require(`./handlers/${handler}`)(client);
 });
-keepAlive();
+
 client.login(process.env.TOKEN);
