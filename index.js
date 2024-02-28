@@ -5,8 +5,8 @@ const {Spotify} = require("poru-spotify");
 const keepAlive = require(`./server`);
 
 let spotify = new Spotify({
-  clientID:"PUT HERE",
-  clientSecret:"PUT HERE"
+  clientID:"b5ae1640dd414917b0a99c13c5f6a309",
+  clientSecret:"0a21b677e8664d25bf65a75d40b3235f"
 })
 
 
@@ -36,5 +36,5 @@ client.slashCommands = new Collection();
 ['commands', 'events', 'slash', 'poruEvent'].forEach((handler) => {
   require(`./handlers/${handler}`)(client);
 });
-
+keepAlive();
 client.login(process.env.TOKEN);
