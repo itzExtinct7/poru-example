@@ -2,6 +2,7 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js');
 require("dotenv").config();
 const { Poru } = require('poru');
 const {Spotify} = require("poru-spotify");
+const keepAlive = require(`./server`);
 
 let spotify = new Spotify({
   clientID:"PUT HERE",
